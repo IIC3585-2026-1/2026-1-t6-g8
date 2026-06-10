@@ -1,0 +1,53 @@
+<template>
+    <style>
+        :host {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: sans-serif;
+        }
+        label {
+        font-size: 0.95rem;
+        color: #333;
+        }
+        .wrapper {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #bbb;
+        border-radius: 6px;
+        overflow: hidden;
+        }
+        input {
+        width: 60px;
+        text-align: center;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        padding: 4px 6px;
+        /* evita que el input herede estilos externos */
+        background: #fff;
+        color: #111;
+        }
+        button {
+        width: 32px;
+        height: 32px;
+        border: none;
+        background: #f0f0f0;
+        cursor: pointer;
+        font-size: 1.1rem;
+        line-height: 1;
+        transition: background 0.15s;
+        }
+        button:hover  { background: #ddd; }
+        button:active { background: #bbb; }
+        button.dec { border-right: 1px solid #bbb; }
+        button.inc { border-left:  1px solid #bbb; }
+    </style>
+
+    <label><slot>Número:</slot></label>
+    <div class="wrapper">
+    <button class="dec">−</button>
+    <input type="number" />
+    <button class="inc">+</button>
+    </div>
+</template>

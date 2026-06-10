@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>T6 - Web components</title>
+  <script type="module" src="customComponents/index.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Tarea 6 - Web Components</h1>
+  <section>
+    <h2>1. &lt;campo-numerico&gt;</h2>
+    <p>Los tres campos son independientes. Los estilos <code>input { background:red }</code>
+       y <code>button { color:red }</code> del stylesheet global <strong>no entran en el Shadow DOM</strong>.</p>
+
+    <div class="row">
+      <campo-numerico value="0">Cantidad:</campo-numerico>
+      <campo-numerico value="42">Temperatura:</campo-numerico>
+      <campo-numerico value="-5"></campo-numerico>
+    </div>
+
+  </section>
+  
+  <section>
+    <h2>2. &lt;mi-slider&gt;</h2>
+    <p>Tres sliders con rangos y pasos diferentes, todos encapsulados.</p>
+
+    <p style="margin-bottom:6px"><strong>Temperatura (0-100 °C, paso 5):</strong></p>
+    <mi-slider min="0" max="100" value="50" step="5" style="max-width:340px;">
+      <mi-slider-label>0&#8451;</mi-slider-label>
+      <mi-slider-label position="25">25&#8451;</mi-slider-label>
+      <mi-slider-label position="50">50&#8451;</mi-slider-label>
+      <mi-slider-label position="75">75&#8451;</mi-slider-label>
+      <mi-slider-label position="100">100&#8451;</mi-slider-label>
+    </mi-slider>
+
+    <p style="margin-bottom:6px;margin-top:24px"><strong>Volumen (0-10, paso 1):</strong></p>
+    <mi-slider min="0" max="10" value="7" step="1" style="max-width:280px;">
+      <mi-slider-label position="0">
+        <i data-lucide="volume-x"></i>
+      </mi-slider-label>
+
+      <mi-slider-label position="50">
+        <i data-lucide="volume-1"></i>
+      </mi-slider-label>
+
+      <mi-slider-label position="100">
+        <i data-lucide="volume-2"></i>
+      </mi-slider-label>
+    </mi-slider>
+
+    <p style="margin-bottom:6px;margin-top:24px"><strong>Año (2000-2030):</strong></p>
+    <mi-slider min="2000" max="2030" value="2026" step="1" style="max-width:400px;">
+      <mi-slider-label position="0">2000</mi-slider-label>
+      <mi-slider-label position="50">2015</mi-slider-label>
+      <mi-slider-label position="100">2030</mi-slider-label>
+    </mi-slider>
+  </section>
+
+  <script src="https://unpkg.com/lucide"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>
