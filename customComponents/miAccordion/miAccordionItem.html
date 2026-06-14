@@ -1,0 +1,37 @@
+<template>
+    <style>
+        :host {
+            display: block;
+            border-bottom: 1px solid #ccc;
+            font-family: sans-serif;
+        }
+        .heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            cursor: pointer;
+            background: #f7f7f7;
+            user-select: none;
+        }
+        .heading:hover { background: #efefef; }
+        .icon {
+            font-size: 1.2rem;
+            line-height: 1;
+            width: 16px;
+            text-align: center;
+        }
+        .icon::after { content: "+"; }
+        :host([open]) .icon::after { content: "\2212"; }
+        .panel { display: none; padding: 12px 16px; }
+        :host([open]) .panel { display: block; }
+    </style>
+
+    <div class="heading">
+        <slot name="heading">Item</slot>
+        <span class="icon"></span>
+    </div>
+    <div class="panel">
+        <slot></slot>
+    </div>
+</template>

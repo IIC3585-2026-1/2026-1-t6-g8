@@ -92,6 +92,38 @@
     <div id="subpages" class="row" style="margin-top:20px;"></div>
   </section>
 
+  <section>
+    <h2>5. &lt;mi-accordion&gt;</h2>
+    <p>Cada item abre y cierra de forma independiente al hacer click en su título.</p>
+
+    <mi-accordion style="max-width:350px;">
+      <mi-accordion-item>
+        <span slot="heading">Item 1</span>
+        <div>Panel one content</div>
+      </mi-accordion-item>
+      <mi-accordion-item>
+        <span slot="heading">Item 2</span>
+        <div>Panel 2 content</div>
+      </mi-accordion-item>
+      <mi-accordion-item>
+        <span slot="heading">Item 3</span>
+        <div>Panel 3 content</div>
+      </mi-accordion-item>
+    </mi-accordion>
+  </section>
+
+  <section>
+    <h2>6. &lt;mi-card&gt;</h2>
+    <p>El mismo componente con distintos tamaños, controlados solo por variables CSS desde fuera.</p>
+
+    <div class="row">
+      <mi-card>Tamaño por defecto</mi-card>
+      <mi-card class="card-chica">Chica (150x100)</mi-card>
+      <mi-card class="card-ancha">Ancha (300x100)</mi-card>
+      <mi-card class="card-grande">Grande (220x180)</mi-card>
+    </div>
+  </section>
+
   <script type="module">
     await Promise.all([
       customElements.whenDefined("mi-breadcrumb"),
