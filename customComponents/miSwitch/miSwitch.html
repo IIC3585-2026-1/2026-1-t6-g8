@@ -1,0 +1,56 @@
+<template>
+  <style>
+    :host {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      user-select: none;
+      font-family: sans-serif;
+      font-size: 0.95rem;
+    }
+
+    .track {
+      position: relative;
+      width: 44px;
+      height: 24px;
+      background: #ccc;
+      border-radius: 12px;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+
+    .thumb {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+      transition: left 0.2s;
+    }
+
+    :host([checked]) .track {
+      background: #4caf50;
+    }
+
+    :host([checked]) .thumb {
+      left: 22px;
+    }
+
+    slot[name="checked-message"]   { display: none; }
+    slot[name="unchecked-message"] { display: inline; }
+
+    :host([checked]) slot[name="checked-message"]   { display: inline; }
+    :host([checked]) slot[name="unchecked-message"] { display: none; }
+  </style>
+
+  <slot></slot>
+  <div class="track">
+    <div class="thumb"></div>
+  </div>
+  <slot name="checked-message"></slot>
+  <slot name="unchecked-message"></slot>
+</template>

@@ -59,6 +59,30 @@
     </mi-slider>
   </section>
 
+  <section>
+    <h2>3. &lt;mi-switch&gt;</h2>
+    <p>Tres switches independientes. El texto de la derecha cambia según el estado.</p>
+    <div class="stack">
+      <mi-switch>
+        <span slot="checked-message">On</span>
+        <span slot="unchecked-message">Off</span>
+        <label>Captions:</label>
+      </mi-switch>
+
+      <mi-switch checked>
+        <span slot="checked-message">On</span>
+        <span slot="unchecked-message">Off</span>
+        <label>Modo oscuro:</label>
+      </mi-switch>
+
+      <mi-switch>
+        <span slot="checked-message">Activo</span>
+        <span slot="unchecked-message">Inactivo</span>
+        <label>Notificaciones:</label>
+      </mi-switch>
+    </div>
+  </section>
+
   <script src="https://unpkg.com/lucide"></script>
   <script>
     lucide.createIcons();

@@ -32,6 +32,11 @@ section {
     align-items: center;
     margin-bottom: 16px;
 }
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
 /*
 Intentamos "atacar" los estilos internos desde afuera
@@ -45,3 +50,4 @@ button {
 }
 
 label { font-size: 2rem; }
+mi-switch label { font-size: 0.95rem; cursor: pointer; }
