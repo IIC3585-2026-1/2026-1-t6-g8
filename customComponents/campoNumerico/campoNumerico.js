@@ -1,6 +1,6 @@
 import { loadTemplate } from "../loadTemplate.js";
 
-const campoNumericoTemplate = await loadTemplate("./campoNumerico.html");
+const campoNumericoTemplate = await loadTemplate("./campoNumerico/campoNumerico.html");
 
 class CampoNumerico extends HTMLElement {
   static get observedAttributes() {
