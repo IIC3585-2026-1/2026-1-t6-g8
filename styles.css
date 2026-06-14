@@ -37,6 +37,20 @@ section {
     flex-direction: column;
     gap: 12px;
 }
+.nav-btn {
+    padding: 6px 14px;
+    border: 1px solid #4a90d9;
+    background: white;
+    color: #4a90d9;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.15s, color 0.15s;
+}
+.nav-btn:hover {
+    background: #4a90d9;
+    color: white;
+}
 
 /*
 Intentamos "atacar" los estilos internos desde afuera

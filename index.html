@@ -83,6 +83,80 @@
     </div>
   </section>
 
+  <section>
+    <h2>4. &lt;mi-breadcrumb&gt;</h2>
+    <p>Haz click en una subpágina para navegar. Haz click en un ítem del breadcrumb para volver a ese nivel.</p>
+
+    <mi-breadcrumb id="breadcrumb"></mi-breadcrumb>
+
+    <div id="subpages" class="row" style="margin-top:20px;"></div>
+  </section>
+
+  <script type="module">
+    await Promise.all([
+      customElements.whenDefined("mi-breadcrumb"),
+      customElements.whenDefined("mi-breadcrumb-item"),
+    ]);
+
+    const tree = {
+      "Home":        ["Productos", "Blog", "Contacto"],
+      "Productos":   ["Electrónica", "Ropa", "Deportes"],
+      "Electrónica": ["Laptops", "Smartphones", "Tablets"],
+      "Laptops":     [],
+      "Smartphones": [],
+      "Tablets":     [],
+      "Blog":        ["Tecnología", "Diseño"],
+      "Tecnología":  [],
+      "Diseño":      [],
+      "Contacto":    [],
+      "Ropa":        ["Camisetas", "Pantalones"],
+      "Camisetas":   [],
+      "Pantalones":  [],
+      "Deportes":    ["Fútbol", "Tenis"],
+      "Fútbol":      [],
+      "Tenis":       [],
+    };
+
+    let path = ["Home"];
+
+    const breadcrumb = document.getElementById("breadcrumb");
+    const subpagesEl = document.getElementById("subpages");
+
+    function render() {
+      breadcrumb.innerHTML = "";
+      path.forEach(page => {
+        const item = document.createElement("mi-breadcrumb-item");
+        item.textContent = page;
+        breadcrumb.appendChild(item);
+      });
+
+      subpagesEl.innerHTML = "";
+      const children = tree[path.at(-1)] ?? [];
+
+      if (children.length === 0) {
+        subpagesEl.innerHTML = "<em style='color:#888'>No hay subpáginas.</em>";
+      } else {
+        children.forEach(child => {
+          const btn = document.createElement("button");
+          btn.className = "nav-btn";
+          btn.textContent = child + " →";
+          btn.addEventListener("click", () => {
+            path.push(child);
+            render();
+          });
+          subpagesEl.appendChild(btn);
+        });
+      }
+    }
+
+    breadcrumb.addEventListener("breadcrumb-navigate", (e) => {
+      path = path.slice(0, e.detail.index + 1);
+      render();
+    });
+
+    render();
+  </script>
+
   <script src="https://unpkg.com/lucide"></script>
   <script>
     lucide.createIcons();

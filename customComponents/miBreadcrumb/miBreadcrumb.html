@@ -1,0 +1,42 @@
+<template>
+  <style>
+    :host {
+      display: block;
+      font-family: sans-serif;
+      font-size: 0.9rem;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .item {
+      color: #4a90d9;
+      cursor: pointer;
+      padding: 2px 4px;
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+
+    .item:hover {
+      background: #e8f0fb;
+      text-decoration: underline;
+    }
+
+    .separator {
+      color: #aaa;
+      user-select: none;
+    }
+
+    .current {
+      color: #333;
+      font-weight: 500;
+      padding: 2px 4px;
+    }
+  </style>
+
+  <nav></nav>
+</template>
