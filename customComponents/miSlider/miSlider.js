@@ -13,7 +13,7 @@ customElements.define("mi-slider-label", MiSliderLabel);
 
 class MiSlider extends HTMLElement {
   static get observedAttributes() {
-    return ["min", "max", "value", "step"];
+    return ["value"];
   }
 
   constructor() {
@@ -63,11 +63,7 @@ class MiSlider extends HTMLElement {
   attributeChangedCallback(name, oldValue, newValue) {
     if (!this._input) return;
 
-    if (name === "min") this._input.min = newValue;
-    if (name === "max") this._input.max = newValue;
-    if (name === "step") this._input.step = newValue;
     if (name === "value") this._input.value = newValue;
-
     this._updateVisuals();
   }
 
@@ -96,14 +92,9 @@ class MiSlider extends HTMLElement {
           el.textContent.match(/-?\d+(\.\d+)?/);
 
         if (match) {
-          const min =
-            Number(this.getAttribute("min") ?? 0);
-
-          const max =
-            Number(this.getAttribute("max") ?? 100);
-
           const val = Number(match[0]);
-
+          const min = Number(this._input.min)
+          const max = Number(this._input.max);
           pos = ((val - min) / (max - min)) * 100;
         } else {
           pos = 0;
