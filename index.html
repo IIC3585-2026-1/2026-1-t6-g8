@@ -124,6 +124,32 @@
     </div>
   </section>
 
+  <section>
+    <h2>7. &lt;mi-horizontal-scroll&gt;</h2>
+    <p>
+      El mismo componente usado dos veces con distintas configuraciones.
+      Los estilos internos (flechas, scrollbar, gap) están encapsulados en el Shadow DOM.
+    </p>
+
+    <p style="margin-bottom: 8px"><strong>Con snap y flechas (por defecto):</strong></p>
+    <mi-horizontal-scroll snap>
+      <mi-card>Card 1</mi-card>
+      <mi-card>Card 2</mi-card>
+      <mi-card>Card 3</mi-card>
+      <mi-card>Card 4</mi-card>
+      <mi-card>Card 5</mi-card>
+      <mi-card>Card 6</mi-card>
+    </mi-horizontal-scroll>
+
+    <p style="margin-bottom: 8px; margin-top: 24px"><strong>Sin flechas, sin snap, cards anchas y mayor separación:</strong></p>
+    <mi-horizontal-scroll hide-arrows class="scroll-amplio">
+      <mi-card class="card-ancha">Ancha 1</mi-card>
+      <mi-card class="card-ancha">Ancha 2</mi-card>
+      <mi-card class="card-ancha">Ancha 3</mi-card>
+      <mi-card class="card-ancha">Ancha 4</mi-card>
+    </mi-horizontal-scroll>
+  </section>
+
   <script type="module">
     await Promise.all([
       customElements.whenDefined("mi-breadcrumb"),

@@ -69,3 +69,5 @@ mi-switch label { font-size: 0.95rem; cursor: pointer; }
 .card-chica   { --card-width: 150px; --card-height: 100px; }
 .card-ancha   { --card-width: 300px; --card-height: 100px; }
 .card-grande  { --card-width: 220px; --card-height: 180px; }
+
+.scroll-amplio { --scroll-gap: 32px; --scroll-padding: 20px; }

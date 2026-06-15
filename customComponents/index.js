@@ -4,3 +4,4 @@ import './miSwitch/miSwitch.js';
 import './miBreadcrumb/miBreadcrumb.js';
 import './miAccordion/miAccordion.js';
 import './miCard/miCard.js';
+import './miHorizontalScroll/miHorizontalScroll.js';
